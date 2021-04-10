@@ -1,0 +1,30 @@
+- var r = 450;
+- var d = 2*r;
+- var clock_r = .8*r;
+- var arc_r = .5*(clock_r + r);
+- var mark_major_len = .08*clock_r;
+- var mark_minor_len = .04*clock_r;
+
+svg(viewbox=[-r, -r, d, d].join(' '))
+	defs
+		line(id='mark--major' y1=mark_major_len)
+		line(id='mark--minor' y1=mark_minor_len)
+		circle(id='cc' r=clock_r)
+		
+	g(id='ticks')
+	
+	g(id='hands')
+		g(class='hand--h')
+			line(y2=-.65*clock_r)
+			line(y1=-.38*clock_r y2=-.57*clock_r)
+		g(class='hand--m' transform='rotate(25)')
+			line(y2=-.83*clock_r)
+			line(y1=-.56*clock_r y2=-.75*clock_r)
+		g(class='hand--s' transform='rotate(60)')
+			line(y1=.1*clock_r y2=-.95*clock_r)
+			circle(r=.04*clock_r)
+			circle(r=.02*clock_r)
+	
+	g(id='progress')
+		path(id='arc')
+		polygon(id='vertex' points=`0,${-arc_r} -39,${-arc_r - 20} -20,${-arc_r}  -39,${-arc_r + 20}`)

@@ -1,0 +1,81 @@
+$theme-c: #e18728;
+$hl-c: #be4c39;
+
+body { margin: 0; background: #000; }
+
+svg {
+	display: block;
+	margin: calc(50vh - 50vmin) auto;
+	min-width: 15em; min-height: 15em;
+	width: 100vmin; height: 100vmin;
+	max-width: 100em; max-height: 100em;
+	font-size: 1em;
+}
+
+* { vector-effect: non-scaling-stroke; }
+
+[id*='mark'] { stroke: #eee; }
+
+[id='mark--major'] { stroke-width: 7; }
+[id='mark--minor'] { stroke-width: 2; }
+
+[id='ticks'] {
+	text {
+		dominant-baseline: middle;
+		text-anchor: middle;
+		font: 20px verdana, sans-serif;
+		fill: #aaa;
+	}
+	.quad {
+		font: 700 28px verdana, sans-serif;
+		fill: #eee;
+	}
+}
+
+.hand {
+	&--h, &--m {
+		stroke: #eee;
+		stroke-linecap: round;
+		
+		line:nth-child(2) {
+			stroke: #4ca454;
+			stroke-width: 3;
+		}
+	}
+	
+	&--h {
+		stroke-width: 7;
+	}
+	
+	&--m {
+		stroke-width: 5;
+	}
+	
+	&--s {
+		stroke: #be4c39;
+		
+		line { stroke-width: 2; }
+		
+		circle {
+			fill: $theme-c;
+			
+			&:nth-of-type(2) {
+				fill: lighten(#be4c39, 25%)
+			}
+		}
+	}
+}
+
+[id='arc'] {
+	fill: transparent;
+	stroke: #4ca454;
+	stroke-width: 4;
+	stroke-linecap: round;
+}
+
+[id='vertex'] { fill: #4ca454; }
+
+.counterclockwise {
+	[id='vertex'] { fill: $hl-c; }
+	[id='arc'] { stroke: $hl-c; }
+}

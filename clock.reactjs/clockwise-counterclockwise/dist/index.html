@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - clockwise/ counterclockwise</title>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg viewbox="-450 -450 900 900">
+  <defs>
+    <line id="mark--major" y1="28.8"></line>
+    <line id="mark--minor" y1="14.4"></line>
+    <circle id="cc" r="360"></circle>
+  </defs>
+  <g id="ticks"></g>
+  <g id="hands">
+    <g class="hand--h">
+      <line y2="-234"></line>
+      <line y1="-136.8" y2="-205.2"></line>
+    </g>
+    <g class="hand--m" transform="rotate(25)">
+      <line y2="-298.8"></line>
+      <line y1="-201.60000000000002" y2="-270"></line>
+    </g>
+    <g class="hand--s" transform="rotate(60)">
+      <line y1="36" y2="-342"></line>
+      <circle r="14.4"></circle>
+      <circle r="7.2"></circle>
+    </g>
+  </g>
+  <g id="progress">
+    <path id="arc"></path>
+    <polygon id="vertex" points="0,-405 -39,-425 -20,-405  -39,-385"></polygon>
+  </g>
+</svg>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
